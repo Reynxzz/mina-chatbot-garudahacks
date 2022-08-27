@@ -1,0 +1,83 @@
+{"intents": [
+        {"tag": "greeting",
+         "patterns": ["Hi", "How are you", "Is anyone there?", "Hello", "Good day", "Whats up", "Hello Mina How are you", "How are you doing", "hai anyone here", "hi everyone", "what is happening", "what are you", "hello chatbot for imposter syndrome", "nice to meet you", "glad to see you", "i need some help", "can you help me", "what can you do", "is any bot here", "i want to talk with you", "can you help me right now"],
+         "responses": ["Hello! I'm Mina, your personal assistant to conquer your imposter!", "Good to see you again!, I am Mina", "Hi there, how can I help you?"],
+         "context_set": ""
+        },
+        {"tag": "goodbye",
+         "patterns": ["cya", "See you later", "Goodbye", "I am Leaving","I am Leaving right now", "Have a Good day", "thats it thankyou for helping me", "i will see you next time", "thank you so much for the information", "thats so helpful thankyou", "see you in another time", "see ya in another chance", "i will meet you again later", "hope to see you again", "that is enough for me", "i think its enough", "youre so helpful, thankyou so much", "you are the best chatbot thankyou", "i need to go right now goodbye my friend", "goodbye my best assistant", "bye friend, you are so helpful"],
+         "responses": ["Sad to see you go :(", "Talk to you later", "Goodbye!"],
+         "context_set": ""
+        },
+        {"tag": "age",
+         "patterns": ["how old", "how old is zyo", "what is your age", "how old are you", "age?","can you tell me your age", "do you mind if i wanna know your age", "i want to know your age", "how many years old are you", "when is your birthday", "how young are you", "are you young", "are you old enough to guide me", "i hope i know your old", "can you tell me that you are older than me", "are you older than me", "are you younger than me", "we have the same old", "i am older than you", "i am younger than you", "you are 20 years old"],
+         "responses": ["I am 20 years old!", "20 years young!"],
+         "context_set": ""
+        },
+        {"tag": "name",
+         "patterns": ["what is your name", "what should I call you", "whats your name?", "i want to know your name", "do you mind if you tell me your name", "i hope i know your name", "i just want to know what is your name", "is your name zyo", "what is your bot name", "your name i need to know who you are", "whats your  nickname", "what should i call your name", "i know your name is good", "please tell me your name first", "i need to remember your name", "i dont remember your name, can you tell me again", "i dont know who you are", "you can can tell me your name so we can talk", "is everyone know your name", "so your name is", "what if i dont know your name"],
+         "responses": ["You can call me Mina", "I'm Mina!", "I'm Mina! Your Personal Assistant to Qonquer your Imposter!"],
+         "context_set": ""
+        },
+        {"tag": "imposter_define",
+        "patterns": ["i wonder what is imposter syndrome", "i dont know what is imposter syndrome", "can you give me a definition of imposter syndrome?", "do you mind if you tell me what is imposter syndrome?", "Could you please define imposter syndrome for me?", "Could you explain imposter syndrome to me?", "Describe imposter syndrome for me, please", "Identify imposter syndrome for me, please", "Do you mind if I ask what imposter syndrome is?", "Would you mind explaining imposter syndrome to me?", "Would it be okay if you explained what imposter syndrome is?", "What is imposter syndrome, if you don't mind my asking?", "I'm curious what imposter syndrome is"],
+        "responses": ["People who struggle with imposter syndrome believe that they are undeserving of their achievements and the high esteem in which they are, in fact, generally held. They feel that they aren't as competent or intelligent as others might think—and that soon enough, people will discover the truth about them."],
+        "context_set": ""
+        },
+        {"tag": "imposter_diagnose",
+        "patterns": ["i wonder if i have imposter syndrome, can i diagnose it", "i dont know if i have an imposter syndrome", "can i test if i have an imposter syndrome?", "maybe i have that imposter syndrome thing, i want to check it", "I'm wondering if I have imposter syndrome and if so, how can I tell?", "Can I say if I have imposter syndrome?", "I want to know if I have imposter syndrome and how to identify it", "I'm curious about my ability to be diagnosed with imposter syndrome", "I'm interested in knowing how to identify imposter syndrome if I do", "I'm keen to understand how to identify imposter syndrome if I do", "I'm interested in understanding how or when to recognize imposter syndrome if I encounter it", "I'm not sure if I have imposter syndrome", "I'm not sure if I suffer from imposter syndrome"],
+        "responses": [" imposter syndrome is not an official psychiatric diagnosis in the DSM. People with imposter syndrome may struggle with other mental health conditions, such as anxiety or depression, but an individual couldn't be diagnosed as having imposter syndrome."],
+         "context_set": "need a follow up question"
+        },
+        {"tag": "imposter_causes",
+         "patterns": ["i wonder what causes imposter syndrome", "What causes imposter syndrome?", "what causing imposter syndrome", "do you mind if you tell me what causes imposter syndrome?", "Imposter syndrome causes", "Imposter syndrome is caused by", "Imposter Syndrome: What Causes It?", "why imposter syndrome occurs", "Imposter syndrome: causes and effects", "I'm curious what causes imposter syndrome", "What factors lead to imposter syndrome, I wonder?", "I'm curious what triggers imposter syndrome", "why imposter syndrome exists"],
+         "responses": ["Personality traits largely drive imposter syndrome: Those who experience it struggle with self-efficacy, perfectionism, and neuroticism. Competitive environments can also lay the groundwork. For example, many people who go on to develop feelings of impostorism faced intense pressure about academic achievement from their parents in childhood."],
+         "context_set": ""
+        },
+        {"tag": "imposter_common",
+         "patterns": ["i wonder how common is imposter syndrome", "How common is imposter syndrome?", "I'm curious how common imposter syndrome is", "I'm curious how widespread imposter syndrome is", "I'm curious how prevalent imposter syndrome is", "Is imposter syndrome widespread?", "how many people suffer from imposter syndrome", "how many people are affected by imposter syndrome", "how many individuals experience imposter syndrome", "who experiences imposter syndrome?", "am i the only person who experienced this syndrome", "Do you know anyone else who has had this syndrome?", "Am I the Only One Who Has Suffered From This Syndrome?"],
+         "responses": ["Around 25 to 30 percent of high achievers may suffer from imposter syndrome. And around 70 percent of adults may experience impostorism at least once in their lifetime, research suggests"],
+         "context_set": ""
+        },
+        {"tag": "imposter_overcome",
+         "patterns": ["i wonder how to overcome imposter syndrome", "I'm curious how and when to overcome imposter syndrome", "I'm curious how to get rid of imposter syndrome", "I'm curious how to get past imposter syndrome", "I'd like to know how to get past imposter syndrome", "how to not experiencing imposter syndrome anymore", "how to avoid imposter syndrome in the future", "How to stop suffering from imposter syndrome", "the best way to stop having imposter syndrome", "i dont want to experiencing this syndrome anymore", "I don't want to be subjected to this syndrome any longer", "I don't want to be affected by this syndrome any longer", "I want to stop going through this syndrome"],
+         "responses": ["Reflecting on your concrete achievements, sharing your feelings with a loved one (preferably outside of the setting in which you feel impostorism), expecting to make mistakes at the beginning of a new experience, and seeking out a mentor who has charted a similar path are a few of the concrete steps that can fight imposter syndrome."],
+         "context_set": "need a follow up question"
+        },
+        {"tag": "imposter_support",
+         "patterns": ["Who should people with imposter syndrome turn to for support?", "i need someone to talk about my syndrome", "Who should people suffering from imposter syndrome seek help from?", "To whom should people suffering from imposter syndrome seek help?", "Who should imposter syndrome sufferers turn to for assistance?", "Who can help those who suffer from imposter syndrome?", "I'd like to talk to someone about my syndrome and get some advice", "I require support and conversation about my syndrome", "I require assistance and someone to discuss my syndrome with", "I need someone to assist me in overcoming my imposter syndrome", "I require assistance in overcoming my imposter syndrome", "I require assistance to get past the imposter syndrome", "I require help from anybody to get past my imposter syndrome"],
+         "responses": ["In certain situations, turning to a colleague or mentor who understands one's feeling of insecurity can be advantageous. But research suggests that reaching out to people outside of one's academic or professional circle may be a better tool to combat impostorism. Those individuals can put the person's concerns into context, recalibrate their perspective, and offer support and love."],
+         "context_set": "need a follow up question"
+        },
+        {"tag": "types_perfectionist",
+         "patterns": ["when i fail to reach a goal, i experience major self-doubt and worry about measuring up", "When I fail to meet a goal, I have a lot of self-doubt and worry about not measuring up", "When I don't accomplish a goal, I have a lot of self-doubt and worry about how I'm doing", "I struggle with severe self-doubt and comparison anxiety when I don't accomplish a goal", "I have a lot of self-doubt and worry about not measuring up when I don't achieve a goal", "i feel like if i want something done right, they have to do it myselves", "I believe that if I want something done correctly, I must do it myself", "I have the impression that if I want something done properly, I must do it myself", "I believe that I must complete tasks on my own if I want them done correctly", "I believe that if I want something done well, I must do it myself", "i want everything to be perfect", "I'm looking for perfection in everything", "I desire perfection in all things"],
+         "responses": ["You could be one of the people who have imposter syndrome, the Perfectionist one. May I ask you a few questions?"],
+         "context_set": "need a follow up question"
+        },
+        {"tag": "types_superman",
+         "patterns": ["i often push myself to work harder and harder to measure up", "I frequently push myself to work harder and harder in order to keep up", "I frequently push myself to work even harder to live up to expectations", "I frequently urge myself to exert more effort in order to keep up", "i often work overload and may harm not only my own mental health, but also my relationships with others", "I frequently experience work overload, which can be detrimental to not only my own mental health but also to my relationships with others", "I frequently work too much, which could be bad for both my interpersonal relationships and my own mental health", "I frequently work too much and risk damaging both my relationships with other people and my own mental health", "I frequently work too much, which could be detrimental to both my interpersonal relationships and my own mental health", "I'm addicted to the validation that comes with working", "I'm actually addicted to the sense of accomplishment that comes from working", "I'm actually dependent on the affirmation I get from my job", "I'm actually dependent on the approval that comes from working"],
+         "responses": ["You could be one of the people who have imposter syndrome, the Superwoman/man one. May I ask you a few questions?"],
+         "context_set": "need a follow up question"
+        },
+        {"tag": "types_natgenius",
+         "patterns": ["i judge my competence based ease and speed as opposed to my efforts", "I evaluate my competence based on ease and speed rather than effort", "I assess my competence based on ease and speed rather than my effort", "I evaluate my proficiency using ease and speed rather than my efforts", "Rather than evaluating my efforts, I judge my competence based on ease and speed", "Instead of considering my efforts, I evaluate my competence based on ease and speed", "I believe that I must be a natural genius", "I experience shame if it takes me a while to master something.", "I think I have to have natural talent", "The more effort I put in, the less genius I am", "I became less of a genius as I put forth more effort", "I feel guilty if it takes me a while to get something down", "if I take a long time to master something, i feel shame"],
+         "responses": ["You could be one of the people who have imposter syndrome, the Natural Genius one. May I ask you a few questions?"],
+         "context_set": "need a follow up question"
+        },
+        {"tag": "types_soloist",
+         "patterns": ["i feel that asking for help reveals my phoniness", "I believe that asking for assistance exposes my phoniness", "I believe that asking for assistance exposes my hypocrisy", "I think that seeking assistance exposes my lack of sincerity", "I refuse assistance so that I can prove my worth", "I refuse assistance in order to demonstrate my worth", "I refuse help so that I can demonstrate my worth", "I turn down help so I can establish my worth", "In order to establish my value, I turn down help", "I don't require anyone's assistance", "I don't need anyone's help", "I'm not in need of anyone's assistance", "I don't need anybody's assistance"],
+         "responses": ["You could be one of the people who have imposter syndrome, the Soloist one. May I ask you a few questions?"],
+         "context_set": "need a follow up question"
+        },
+        {"tag": "types_expert",
+         "patterns": ["I measure my competence based on what and how much I know or can do", "My competence is measured by what and how much I know or can do", "I gauge my skill level by how much I know or am able to do", "What I know and how much I can do are how I gauge my level of competence", "Depending on what and how much I know or am able to do, I gauge my level of competence", "Believing I will never know enough, I fear being exposed as inexperienced or unknowledgeable", "I'm afraid of being exposed as inexperienced or unknowledgeable because I believe I'll never know enough", "I fear appearing inexperienced or ignorant because I think I will never know enough", "I worry that I'll come off as inexperienced or ignorant because I think I'll never know enough", "I worry about coming across as inexperienced or ignorant because I think I will never know enough", "I'm concerned that I'll come across as naive or ignorant", "I worry about coming across as naive or ignorant", "I worry that my inexperience or ignorance will be shown"],
+         "responses": ["You could be one of the people who have imposter syndrome, the Expert one. May I ask you a few questions?"],
+         "context_set": "need a follow up question"
+        },
+        {"tag": "just_talk",
+         "patterns": ["i just wanna share my feelings with you", "i just want to talk with you", "can i just talk to you", "I just want to express myself to you", "I simply want to express my emotions to you", "I just wanted to let you know how I'm feeling", "I simply want to speak with you", "I simply wish to speak with you", "All I want to do is talk to you", "Do you mind if I share some of my thoughts with you?", "Would it be okay if I told you what I was thinking?", "Will it bother you if I tell you what's on my mind?", "Would it be okay if I shared my thoughts with you?"],
+         "responses": ["its ok! just share about your thoughts, feelings, and everything you want to me. I will help as much as I can!"],
+         "context_set": "need a follow up question -- Generative Model"
+        }
+   ]
+}
