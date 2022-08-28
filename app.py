@@ -59,8 +59,8 @@ def getResponse(ints, intents_json):
                 followup_perfectionist()
                 result = ""
                 break
-            # elif tag == 'just_talk':
-            #     generative_model()
+            elif tag == 'just_talk':
+                generative_model()
             result = random.choice(i['responses'])
     return result
 
@@ -108,48 +108,62 @@ def perfect_mission1():
     lst = ['Note down the advantages and disadvantages of being a perfectionist. Whenever you find yourself falling back into perfectionism, take another look at the disadvantages and move on', 'Set achievable goals for yourself. Setting attainable goals will keep you from pursuing unattainable perfection. This way, you can achieve your goals with the resources you have', 'Set time limits for tasks and make sure to follow them. To avoid spending excess time trying to perform a task perfectly, create a realistic time limit and stick to it']
     for i in lst:
         st.markdown("- " + i)
+    st.button('Done? submit your mission here!')
 
 # GENERATIVE MODEL CHATBOT
+# --------------------------------------------------------------- #
+import transformers
+from transformers import AutoModelForCausalLM, AutoTokenizer
+import torch
 
-# from transformers import AutoModelForCausalLM, AutoTokenizer
-# import torch
+@st.cache(hash_funcs={transformers.models.gpt2.tokenization_gpt2_fast.GPT2TokenizerFast: hash}, suppress_st_warning=True)
+def load_data():    
+ tokenizer = AutoTokenizer.from_pretrained("microsoft/DialoGPT-medium")
+ model = AutoModelForCausalLM.from_pretrained("microsoft/DialoGPT-medium")
+ return tokenizer, model
 
-# model_name = "microsoft/DialoGPT-small"
-# # model_name = "microsoft/DialoGPT-medium"
-# # model_name = "microsoft/DialoGPT-small"
-# tokenizer = AutoTokenizer.from_pretrained(model_name)
-# model = AutoModelForCausalLM.from_pretrained(model_name)
+def generative_model():
+    tokenizer, model = load_data()
 
-# def generative_model():
-#     for step in range(5):
-#         # take user input
-#         text = st.text_input("Talk to me anything!")
-#         # encode the input and add end of string token
-#         input_ids = tokenizer.encode(text + tokenizer.eos_token, return_tensors="pt")
-#         # concatenate new user input with chat history (if there is)
-#         bot_input_ids = torch.cat([chat_history_ids, input_ids], dim=-1) if step > 0 else input_ids
-#         # generate a bot response
-#         chat_history_ids = model.generate(
-#             bot_input_ids,
-#             max_length=1000,
-#             do_sample=True,
-#             top_p=0.95,
-#             top_k=0,
-#             temperature=0.75,
-#             pad_token_id=tokenizer.eos_token_id
-#         )
-#         #print the output
-#         output = tokenizer.decode(chat_history_ids[:, bot_input_ids.shape[-1]:][0], skip_special_tokens=True)
-#         st.succes(output)
+    st.write("###### You can talk to me anything you say. I hope i can understand you :)")
+    input = st.text_input('Talk to me anything:')
+    if 'count' not in st.session_state or st.session_state.count == 6:
+        st.session_state.count = 0 
+        st.session_state.chat_history_ids = None
+        st.session_state.old_response = ''
+    else:
+        st.session_state.count += 1
 
+    new_user_input_ids = tokenizer.encode(input + tokenizer.eos_token, return_tensors='pt')
+
+    bot_input_ids = torch.cat([st.session_state.chat_history_ids, new_user_input_ids], dim=-1) if st.session_state.count > 1 else new_user_input_ids
+
+    st.session_state.chat_history_ids = model.generate(bot_input_ids, max_length=5000, pad_token_id=tokenizer.eos_token_id)
+
+    response = tokenizer.decode(st.session_state.chat_history_ids[:, bot_input_ids.shape[-1]:][0], skip_special_tokens=True)
+
+    if st.session_state.old_response == response:
+        bot_input_ids = new_user_input_ids
+    
+    st.session_state.chat_history_ids = model.generate(bot_input_ids, max_length=5000, pad_token_id=tokenizer.eos_token_id)
+    response = tokenizer.decode(st.session_state.chat_history_ids[:, bot_input_ids.shape[-1]:][0], skip_special_tokens=True)
+
+    st.write(f"Mina: {response}")
+
+    st.session_state.old_response = response
+
+# --------------------------------------------------------------- #
 
 # STREAMLIT APP
 st.markdown('<style>body{text-align:center;background-color:black;color:white;align-items:justify;display:flex;flex-direction:column;}</style>', unsafe_allow_html=True)
 st.title("Mina: Your Personal Mentor to Conquer Imposter Syndrome")
+st.image('landingPageMina.jpg')
 st.markdown("Mina is a chatbot that will help you conquer your imposter syndrome. You can talk about what symptoms of imposter syndrome you want to overcome then Mina will direct you to structured missions")
-
+st.image('landingPageMina2.jpg')
 #print("bot is live")
-message = st.text_input("You can ask me anything about imposter syndrome below:")
+message = st.text_input("You can ask me anything about imposter syndrome, or just share your feelings with me!")
+st.markdown('<div style="text-align: justify; font-size: 10pt"><b>Tips:</b> you can ask the FAQ of Imposter Syndrom, like what is imposter syndrome, how to overcome this syndrome, what causes this, and many more!</div>', unsafe_allow_html=True)
+st.markdown('<div style="text-align: justify;></div>', unsafe_allow_html=True)
 ints = predict_class(message, model)
 res = getResponse(ints,intents)
 if res != "":
