@@ -72,6 +72,15 @@ def chatbot_response(msg):
 def chatbot_response_direct(msg):
     return msg
 
+#initialize button
+if "button_clicked" not in st.session_state:
+    st.session_state.button_clicked = False
+
+def callback():
+    #button was clicked
+    st.session_state.button_clicked = True
+
+
 def followup_perfectionist():
     st.success("Mina: You could be one of the people who have imposter syndrome, the Perfectionist one. May I ask you a few questions?")
     message = st.text_input("Have you ever been accused of being a micromanager?")
@@ -83,7 +92,7 @@ def followup_perfectionist():
             message = st.text_input("Do you feel like your work must be 100% perfect, 100% of the time?")
             if message == 'yes':
                 st.success("Mina: Thats indicate you are the Perfectionist one. I have a mission to conquer your symptoms, wanna join?")
-                if st.button(f"Let's go to mission!"):
+                if st.button(f"Let's go to mission!", on_click=callback) or st.session_state.button_clicked :
                     st.image('perfectionist_welcome.jpg')
                     st.markdown('<div style="text-align: justify;">Perfectionism and imposter syndrome often go hand-in-hand. Think about it: Perfectionists set excessively high goals for themselves, and when they fail to reach a goal, they experience major self-doubt and worry about measuring up. Whether they realize it or not, this group can also be control freaks, feeling like if they want something done right, they have to do it themselves.</div>', unsafe_allow_html=True) 
                     st.markdown('<div style="text-align: justify;"></div>', unsafe_allow_html=True) 
@@ -108,7 +117,9 @@ def perfect_mission1():
     lst = ['Note down the advantages and disadvantages of being a perfectionist. Whenever you find yourself falling back into perfectionism, take another look at the disadvantages and move on', 'Set achievable goals for yourself. Setting attainable goals will keep you from pursuing unattainable perfection. This way, you can achieve your goals with the resources you have', 'Set time limits for tasks and make sure to follow them. To avoid spending excess time trying to perform a task perfectly, create a realistic time limit and stick to it']
     for i in lst:
         st.markdown("- " + i)
-    st.button('Done? submit your mission here!')
+    if st.button('Done? submit your mission here!'):
+        st.balloons()
+
 
 # GENERATIVE MODEL CHATBOT
 # --------------------------------------------------------------- #
