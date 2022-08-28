@@ -3,3 +3,5 @@
 # Mina: Your Personal Assistant to Conquer Imposter Syndrome 
 
 Mina is a chatbot that will help you conquer your imposter syndrome. You can talk about what symptoms of imposter syndrome you want to overcome then Mina will direct you to structured missions.
+
+Video DEMO: https://www.youtube.com/watch?v=1eS8brqQr8M
